@@ -106,17 +106,6 @@ class SparkSession:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.stopSparkContext()
 
-# def redis_serializer(data):
-#     if isinstance(data, bytes):
-#         return data.decode('ascii')
-#     if isinstance(data, dict):
-#         return dict(map(redis_serializer, data.items()))
-#     if isinstance(data, tuple):
-#         return map(redis_serializer, data)
-#     if isinstance(data, list):
-#         return list(map(redis_serializer, data))
-#     return data
-
 def initialize_spark_redis_csv_loader(appname,csv_file):
     with SparkSession(appname=appname,config={"source_file":csv_file.rsplit(os.sep,1)[1]}) as spark_session_obj:
         dataframe = spark_session_obj.read_csv(csv_file).cache()
