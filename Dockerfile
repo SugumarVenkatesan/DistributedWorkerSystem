@@ -15,6 +15,8 @@ COPY . /DistributedWorkerSystem/
 
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
-RUN apk add --no-cache openjdk8
+RUN apk add --no-cache --update openjdk8
+
+EXPOSE 5000
 
 CMD ["python", "/DistributedWorkerSystem/distributed_worker/run.py"]

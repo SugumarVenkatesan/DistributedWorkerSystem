@@ -6,7 +6,7 @@ APPLICATION_NAME = "DISTRIBUTED WORKER SYSTEM"
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-REDIS_HOST = "redis"
+REDIS_HOST = os.environ.get("REDIS_HOST", "localhost")
 SPARK_APP_NAME = "DistributedWorkerSystem"
 
 DATASET_INPUT_MODE = "file" #dir for directories

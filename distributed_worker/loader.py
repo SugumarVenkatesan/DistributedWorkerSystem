@@ -106,8 +106,9 @@ class SparkSession:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.stopSparkContext()
 
+#{"source_file":csv_file.rsplit(os.sep,1)[1]}
 def initialize_spark_redis_csv_loader(appname,csv_file):
-    with SparkSession(appname=appname,config={"source_file":csv_file.rsplit(os.sep,1)[1]}) as spark_session_obj:
+    with SparkSession(appname=appname,config={"data_source":"kaggle Women Shoe Catalog dataset"}) as spark_session_obj:
         dataframe = spark_session_obj.read_csv(csv_file).cache()
         dataframe_with_required_columns = dataframe.select(DATAFRAME_FILTER_COLUMNS)
         dataframe_without_null_column_values = dataframe_with_required_columns.na.drop()
@@ -146,3 +147,7 @@ def load():
     r.get()
     pool.close()
     pool.join()
+
+
+# if __name__ == '__main__':
+#     load()

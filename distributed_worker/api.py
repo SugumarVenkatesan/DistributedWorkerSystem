@@ -87,6 +87,10 @@ def run():
             app.add_url_rule("/api/getRecentItem/<date>", view_func=RecentItemAPIView.as_view("RecentItemAPIView"))
             app.add_url_rule("/api/getBrandsCount/<date>", view_func=BrandsCountAPIView.as_view("BrandsCountAPIView"))
             app.add_url_rule("/api/getItemsbyColor/<color>", view_func=ProductColorAPIView.as_view("ProductColorAPIView"))
-            app.run(host="0.0.0.0", debug=True)
+            app.run(host="0.0.0.0",debug=False)
     except redis.exceptions.ConnectionError:
         raise Exception("Please make sure redis server is configured and reachable")
+
+
+# if __name__ == "__main__":
+#     run()
