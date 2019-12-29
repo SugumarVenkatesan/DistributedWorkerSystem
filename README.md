@@ -45,7 +45,7 @@ Once the API is up and running
     ```
 - Get the docker machine ip incase of windows - use docker-machine ip default or refer https://www.jhipster.tech/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html to access the API server via localhost
 
-- API endpoints are accessible via http://<docker-machine-ip|0.0.0.0>/api
+- API endpoints are accessible via http://<docker-machine-ip|0.0.0.0>:5000/api
 
 #### API Endpoint Details
 - #### getRecentItem
