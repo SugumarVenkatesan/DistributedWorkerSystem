@@ -2,7 +2,7 @@
 
 A distributed worker system to update data in Redis using Python with Pyspark
 
-  - used spark dataframes to read the csv dataset (https://www.kaggle.com/datafiniti/womens-shoes-prices/), transform it and must insert data into redis parallely
+  - used spark dataframes to read the csv dataset (https://www.kaggle.com/datafiniti/womens-shoes-prices/), transform it and will insert data into redis parallely
   - used a Redis server to store each of the record
   - Implemented 3 APIs(Restful) to query and fetch data from redis
        - /api/getRecentItem/<date>- return the most recent item added on the given date 
@@ -45,7 +45,7 @@ Once the API is up and running
     ```
 - Get the docker machine ip incase of windows - use docker-machine ip default or refer https://www.jhipster.tech/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html to access the API server via localhost
 
-- API ednpoints are accessible via http://<docker-machine-ip|0.0.0.0>/api
+- API endpoints are accessible via http://<docker-machine-ip|0.0.0.0>/api
 
 #### API Endpoint Details
 - #### getRecentItem
