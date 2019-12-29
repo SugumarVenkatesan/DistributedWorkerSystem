@@ -5,9 +5,9 @@ A distributed worker system to update data in Redis using Python with Pyspark
   - used spark dataframes to read the csv dataset (https://www.kaggle.com/datafiniti/womens-shoes-prices/), transform it and will insert data into redis parallely
   - used a Redis server to store each of the record
   - Implemented 3 APIs(Restful) to query and fetch data from redis
-       - /api/getRecentItem/<date>- return the most recent item added on the given date 
-       - /api/getBrandsCount/<date> - return the count of each brands added on the given date in descending order
-       - /api/getItemsbyColor/<color> - return the top 10 latest items given input as color
+       - "/api/getRecentItem/<date>" - return the most recent item added on the given date 
+       - "/api/getBrandsCount/<date>" - return the count of each brands added on the given date in descending order
+       - "/api/getItemsbyColor/<color>" - return the top 10 latest items given input as color
 
 ### Steps to setup and run
 Project Local Setup
